@@ -75,6 +75,8 @@ Run Spark applications by registering tasks:
 
 ```kotlin
 tasks.register<SparkSubmit>("launchSparkApp") {
+    applicationResource.set(file("app.jar"))
+    mainClass.set("com.example.Example")
 }
 ```
 
@@ -84,6 +86,8 @@ tasks.register<SparkSubmit>("launchSparkApp") {
 
 ```groovy
 task launchSparkApp(type: SparkSubmit) {
+    applicationResource = file("app.jar")
+    mainClass = "com.example.Example"
 }
 ```
 
