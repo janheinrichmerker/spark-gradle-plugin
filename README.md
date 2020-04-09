@@ -8,7 +8,7 @@ Gradle plugin for launching Spark applications.
 
 ## Gradle Dependency
 
-This plugin is available from the Gradle [plugin portal](https://plugins.gradle.org/plugin/dev.reimer.spark).  
+This plugin is available from the **Gradle [plugin portal](https://plugins.gradle.org/plugin/dev.reimer.spark)**.  
 Add this in your `build.gradle.kts` or `build.gradle` file:
 
 <details open><summary>Kotlin</summary>
@@ -32,7 +32,7 @@ plugins {
 </details>
 
 ### Snapshots
-Alternatively, snapshot builds are available on [**jitpack.io**](https://jitpack.io/#dev.reimer/spark-gradle-plugin).  
+Alternatively, snapshot builds are available on **[JitPack](https://jitpack.io/#dev.reimer/spark-gradle-plugin)**.  
 Add this in your `build.gradle.kts` or `build.gradle` file:
 
 <details><summary>Kotlin</summary>
