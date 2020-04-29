@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "dev.reimer"
-version = "0.1.5"
+version = "0.1.7"
 
 repositories {
     jcenter()
