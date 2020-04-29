@@ -10,6 +10,7 @@ import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.MapProperty
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.*
+import org.gradle.api.tasks.options.Option
 import org.gradle.kotlin.dsl.listProperty
 import org.gradle.kotlin.dsl.mapProperty
 import org.gradle.kotlin.dsl.property
@@ -31,14 +32,17 @@ open class SparkSubmit : DefaultTask() {
 
     @get:Optional
     @get:Input
+    @get:Option(option = "application-name", description = "")
     val applicationName: Property<String> = project.objects.property()
 
     @get:Optional
     @get:Input
+    @get:Option(option = "master", description = "")
     val master: Property<String> = project.objects.property()
 
     @get:Optional
     @get:Input
+    @get:Option(option = "deploy-mode", description = "")
     val deployMode: Property<DeployMode> = project.objects.property()
 
     @get:InputFile
@@ -46,9 +50,11 @@ open class SparkSubmit : DefaultTask() {
 
     @get:Optional
     @get:Input
+    @get:Option(option = "main-class", description = "")
     val mainClass: Property<String> = project.objects.property()
 
     @get:Input
+    @get:Option(option = "application-arguments", description = "")
     val applicationArguments: ListProperty<String> = project.objects.listProperty()
 
     @get:InputFiles
@@ -62,18 +68,22 @@ open class SparkSubmit : DefaultTask() {
 
     @get:Optional
     @get:Input
+    @get:Option(option = "verbose", description = "")
     val verbose: Property<Boolean> = project.objects.property()
 
     @get:Optional
     @get:Input
+    @get:Option(option = "java-home", description = "")
     val javaHome: Property<String> = project.objects.property()
 
     @get:Optional
     @get:Input
+    @get:Option(option = "spark-home", description = "")
     val sparkHome: Property<String> = project.objects.property()
 
     @get:Optional
     @get:Input
+    @get:Option(option = "await-completion", description = "")
     val awaitCompletion: Property<Boolean> = project.objects.property()
 
     private fun buildLauncher(): SparkLauncher {
