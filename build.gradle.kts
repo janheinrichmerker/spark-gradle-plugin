@@ -3,16 +3,18 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.9.22"
     `java-gradle-plugin`
-    id("com.gradle.plugin-publish") version "0.11.0"
+    id("com.gradle.plugin-publish") version "1.2.1"
     id("org.jetbrains.dokka") version "0.10.1"
     `maven-publish`
+    id("com.palantir.git-version") version "3.0.0"
 }
 
+val gitVersion: groovy.lang.Closure<String> by extra
 group = "dev.reimer"
-version = "0.1.7"
+version = gitVersion()
 
 repositories {
-    jcenter()
+    // jcenter()
     mavenCentral()
 }
 
@@ -27,11 +29,6 @@ lateinit var javadocJar: TaskProvider<Jar>
 lateinit var sourcesJar: TaskProvider<Jar>
 
 tasks {
-    // Compile Kotlin to JVM1.8 bytecode.
-    withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "1.8"
-    }
-
     // Include project license in generated JARs.
     withType<Jar> {
         from(project.projectDir) {
@@ -70,25 +67,21 @@ publishing {
     }
 }
 
-pluginBundle {
+gradlePlugin {
     website = "https://github.com/reimersoftware/spark-gradle-plugin"
     vcsUrl = "https://github.com/reimersoftware/spark-gradle-plugin.git"
-    tags = listOf(
-            "spark",
-            "big data",
-            "gradle",
-            "gradle-plugin"
-    )
-}
-
-gradlePlugin {
     plugins {
-        create(name) {
+        create("sparkPlugin") {
             id = "dev.reimer.spark"
+            implementationClass = "dev.reimer.spark.gradle.plugin.SparkPlugin"
             displayName = "Spark Gradle Plugin"
             description = "A plugin for launching Spark applications."
-            implementationClass = "dev.reimer.spark.gradle.plugin.SparkPlugin"
+            tags = listOf(
+                    "spark",
+                    "big data",
+                    "gradle",
+                    "gradle-plugin"
+            )
         }
     }
 }
-
