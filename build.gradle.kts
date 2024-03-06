@@ -14,7 +14,6 @@ group = "dev.reimer"
 version = gitVersion()
 
 repositories {
-    // jcenter()
     mavenCentral()
 }
 
