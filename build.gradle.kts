@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     kotlin("jvm") version "1.9.22"
     `java-gradle-plugin`
@@ -70,16 +68,16 @@ gradlePlugin {
     website = "https://github.com/reimersoftware/spark-gradle-plugin"
     vcsUrl = "https://github.com/reimersoftware/spark-gradle-plugin.git"
     plugins {
-        create("sparkPlugin") {
+        create(name) {
             id = "dev.reimer.spark"
             implementationClass = "dev.reimer.spark.gradle.plugin.SparkPlugin"
             displayName = "Spark Gradle Plugin"
             description = "A plugin for launching Spark applications."
             tags = listOf(
-                    "spark",
-                    "big data",
-                    "gradle",
-                    "gradle-plugin"
+                "spark",
+                "big data",
+                "gradle",
+                "gradle-plugin"
             )
         }
     }
