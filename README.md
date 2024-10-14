@@ -1,6 +1,6 @@
-[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/heinrichreimer/spark-gradle-plugin/ci.yml?branch=master&style=flat-square)](https://github.com/heinrichreimer/spark-gradle-plugin/actions/workflows/ci.yml)
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/janheinrichmerker/spark-gradle-plugin/ci.yml?branch=master&style=flat-square)](https://github.com/janheinrichmerker/spark-gradle-plugin/actions/workflows/ci.yml)
 [![Gradle plugin portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/dev/reimer/spark/dev.reimer.spark.gradle.plugin/maven-metadata.xml.svg?label=gradle&style=flat-square)](https://plugins.gradle.org/plugin/dev.reimer.spark)
-[![JitPack](https://img.shields.io/jitpack/v/github/heinrichreimer/spark-gradle-plugin?style=flat-square)](https://jitpack.io/#dev.reimer/spark-gradle-plugin)
+[![JitPack](https://img.shields.io/jitpack/v/github/janheinrichmerker/spark-gradle-plugin?style=flat-square)](https://jitpack.io/#dev.reimer/spark-gradle-plugin)
 # 💾 spark-gradle-plugin<sup>[α](#status-α)</sup>
 
 Gradle plugin for launching Spark applications.
