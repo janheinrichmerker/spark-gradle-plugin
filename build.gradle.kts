@@ -18,7 +18,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation(gradleKotlinDsl())
-    implementation("org.apache.spark:spark-launcher_2.12:3.5.3")
+    implementation("org.apache.spark:spark-launcher_2.12:3.5.4")
     testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
 }
 
