@@ -4,7 +4,7 @@ plugins {
     id("com.gradle.plugin-publish") version "1.3.1"
     id("org.jetbrains.dokka") version "0.10.1"
     `maven-publish`
-    id("com.palantir.git-version") version "3.3.0"
+    id("com.palantir.git-version") version "4.0.0"
 }
 
 val gitVersion: groovy.lang.Closure<String> by extra
